@@ -5,12 +5,9 @@ import sys
 import matplotlib.pyplot as plt
 from sklearn.cross_validation import train_test_split
 
-### Assignment Owner: Tian Wang
 
-#######################################
-#### Normalization
-
-
+###################################
+#### setting feature range [0 1]
 def feature_normalization(train, test):
     """Rescale the data so that each feature in the training set is in
     the interval [0,1], and apply the same transformations to the test
@@ -244,11 +241,6 @@ def regularized_grad_descent(X, y, alpha=0.1, lambda_reg=1, num_iter=1000):
     return theta_hist, loss_hist
 
 #############################################
-## Visualization of Regularized Batch Gradient Descent
-##X-axis: log(lambda_reg)
-##Y-axis: square_loss
-
-#############################################
 ### Stochastic Gradient Descent
 def stochastic_grad_descent(X, y, alpha=0.1, lambda_reg=1, num_iter=1000, t=1):
     """
@@ -299,12 +291,8 @@ def stochastic_grad_descent(X, y, alpha=0.1, lambda_reg=1, num_iter=1000, t=1):
             
     return theta_hist, loss_hist
 
-################################################
-### Visualization that compares the convergence speed of batch
-###and stochastic gradient descent for various approaches to step_size
-##X-axis: Step number (for gradient descent) or Epoch (for SGD)
-##Y-axis: log(objective_function_value) and/or objective_function_value
-
+###########################
+#### load and tranform dataset
 def main():
     #Loading the dataset
     print('loading the dataset')
